@@ -1,0 +1,107 @@
+
+<div class="row ">
+
+    <div class="col-lg-6">
+        <div id="register">
+            <form class="form-horizontal" name="myForm" role="form" ng-submit="submitForm()" novalidate>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon preIcon"><span class="glyphicon glyphicon-user"></span></span>
+                        <input type="text" name="username" class="form-control" placeholder="UserName" ng-model="human.username" required>
+                    </div>
+                    <div class="has-error" ng-show="myForm.username.$dirty && myForm.username.$invalid && myForm.$submitted">
+
+                        <!--<small class="has-error" ng-show="myForm.username.$error.required">
+                            <span style="color:#ff0000;"> Your name is required.</span>
+                        </small>-->
+                        <small class="has-error" ng-show="myForm.username.$error.minlength">
+                            <span style="color:#ff0000;"> Your name is required to be at least 3 characters.</span>
+                        </small>
+                        <small class="has-error" ng-show="myForm.username.$error.maxlength">
+                            <span style="color:#ff0000;"> Your name cannot be longer than 20 characters.</span>
+                        </small>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon preIcon"><span class="glyphicon glyphicon-envelope "></span></span>
+                        <input type="email" name="email" class="form-control" placeholder="Email" ng-model="human.email" required>
+                       <!-- <span class="glyphicon glyphicon-ok" ng-show="myForm.email.$dirty && myFrom.email.$valid"></span>-->
+
+                    </div>
+                    <div class="has-error" ng-show="myForm.email.$dirty && myForm.email.$invalid && myForm.$submitted">
+
+                        <!--<small class="has-error" ng-show="myForm.email.$error.required">
+                          <span style="color:#ff0000;">   Your email is required.</span>
+                        </small>-->
+                        <small class="has-error" ng-show="myForm.email.$error.minlength">
+                         <span style="color:#ff0000;">    Your email is required to be at least 3 characters.</span>
+                        </small>
+                        <small class="has-error" ng-show="myForm.email.$error.email">
+                           <span style="color:#ff0000;">  That is not a valid email. Please input a valid email.</span>
+                        </small>
+                        <small class="has-error" ng-show="myForm.email.$error.maxlength">
+                            <span style="color:#ff0000;"> Your email cannot be longer than 20 characters.</span>
+                        </small>
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon preIcon"><span class="glyphicon glyphicon-lock "></span></span>
+                        <input type="password" name="password" class="form-control" placeholder="Password" ng-model="human.password" ng-minlength="5" ng-maxlength="10" required>
+                    </div>
+                    <div class="has-error" ng-show="myForm.password.$dirty && myForm.password.$invalid && myForm.$submitted">
+
+                        <!--<small class="has-error" ng-show="myForm.password.$error.required">
+                            <span style="color:#ff0000;">Your password is required.</span>
+                        </small>-->
+                        <small class="has-error" ng-show="myForm.password.$error.minlength">
+                             <span style="color:#ff0000;">Your password is required to be at least 5 characters.</span>
+                        </small>
+                        <small class="has-error" ng-show="myForm.password.$error.maxlength">
+                            <span style="color:#ff0000;"> Your password cannot be longer than 10 characters.</span>
+                        </small>
+
+                    </div>
+                </div>
+
+                <div class="form-group" >
+                    <input class="btn btn-primary btn-large btn-block" type="submit" value="提交"  />
+                    <!--ng-click="humans.save(human);human=''; ng-disabled="myForm.$invalid" "-->
+
+                </div>
+            </form>
+            已经拥有帐户了？ <a href="/login">登录</a>
+        </div>
+    </div>
+    <div class="col-lg-6">
+
+        <table class="myTable">
+            <tr style="height: 150px">
+                <td width="50"><span class="preIcon"><span class="glyphicon glyphicon-ok" style="font-size:30px"></span></span> </td>
+                <td class="tdContent">
+                    <label style="color:#337ab7;font-size: 20px">完成任务</label><br>
+                    <span>无论是计划旅程，与您的好友分享购物清单或者是同事间的工作企划，奇妙清单让您更简易有趣地去完成任务。</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span class="preIcon"><span class="glyphicon glyphicon-time" style="font-size:30px"></span></span></td>
+                <td>
+                    <label style="color:#337ab7;font-size: 20px">随时被提醒</label><br>
+                    <span>永远不会忘记重要的会议、期限或者是牛奶。奇妙清单的提醒设定让您轻鬆记住大大小小的所有事情。</span>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li ng-repeat="human in humans">
+                name: {{human.username}}<br>
+                email:{{human.email}}<br>
+                pwd:{{human.password}}<br>
+                <button ng-click="remove(human)">X</button>
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,70 @@
+<div class="tasks">
+    <!--Sidebar content-->
+
+    <ng-include src="'client/tasks/views/task-details.ng.html'"></ng-include>
+    <div class="findList">
+        <route-loading-indicator></route-loading-indicator>
+        <div>
+            <table class="table table-hover">
+                <caption class="captionstyle">{{ownType.name}}</caption>
+                <tbody>
+                <tr>
+                    <td colspan="4">
+                        <form>
+                            <div class="input-group quan" style="width: 100%;height: 100%">
+                                <span class="input-group-addon"><span
+                                        class="glyphicon glyphicon-plus preIcon"></span></span>
+                                <input type="text" class="form-control input-down" id="name" name="name"
+                                       placeholder="添加一个任务..." autofocus ng-model="task.name">
+                                <span class="glyphicon glyphicon-star-empty star" id="star" ng-click="showStar()" ng-class="{true:'oldstar',false:'changeStar'}[isStar]" ng-model="task.isstar"></span>
+                                <button ng-click="addTask(task,ownType);task='';" class="hidden">add</button>
+
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+
+                <tr ng-repeat="task in newTasks|filter: {condition:'no'}"  ng-dblclick="edit(task)">
+                    <td colspan="4">
+                        <!--<span class="glyphicon glyphicon-star-empty star" ng-class="{'true':'star','false':'changeStar'}[isChange]" ng-click="change()"></span>-->
+                        <span class="glyphicon glyphicon-trash icon" ng-click="remove()" confirm='{{task._id}}'></span>
+                        <!--<a href="/tasks/{{tasks.Id}}">-->
+                        <span class="glyphicon glyphicon-edit icon" ng-click="edit(task)" aria-hidden="true"> </span>
+                        <span class="onRight">{{task.description}}</span>
+                        <div class="input-group">
+                            <input type="checkbox" style="cursor: pointer" ng-click="finished(task)"/>&nbsp;
+                            <span>{{task.name}}</span>
+                        </div>
+
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div>
+            <span class="conditionstyle" ng-click="show()">显示已完成任务</span>
+            <div  ng-class="{true:'noshow',false:'show'}[isShow]" >
+                <table class="table table-hover">
+                    <tbody>
+                    <tr ng-repeat="task in newTasks|filter: {condition:'done'}">
+                        <td colspan="4">
+                            <!--<span class="glyphicon glyphicon-star-empty star" ng-class="{'true':'star','false':'changeStar'}[isChange]" ng-click="change()"></span>-->
+                            <span class="glyphicon glyphicon-trash icon" ng-click="remove(task)"></span>
+                            <!--<a href="/tasks/{{tasks.Id}}">-->
+                            <span class="glyphicon glyphicon-edit icon" ng-click="edit(task)" aria-hidden="true"> </span>
+                            <span class="onRight">{{task.description}}</span>
+                            <div class="input-group">
+                                <span class="glyphicon glyphicon-check" ng-click="finished(task)" style="cursor: pointer;color: #adadad"></span>&nbsp;
+                                <span style="text-decoration:line-through;color: #adadad">{{task.name}}</span>
+                            </div>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

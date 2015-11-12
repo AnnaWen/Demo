@@ -1,0 +1,13 @@
+<div ng-repeat="type in types" ng-mouseenter="OnMouseEnter(type)" ng-mouseleave="OnMouseEnter(type)">
+    <div class="form-group pointer" >
+        <span class="glyphicon glyphicon-list" style="color:#CDC9C9;font-size: 16px;"></span>
+        <a href="/inbox/findtasksBytype/{{type._id}}"  class="Tlink">
+            <span class="leftFonts">{{type.name}} </span>
+        </a>
+       <div>
+           <span class="glyphicon glyphicon-trash typeedit"  ng-if="type.showIcon" confirm style="margin-right: 5px;z-index: 5;"></span>
+           <span class="glyphicon glyphicon-edit typeedit" ng-if="type.showIcon" ng-click="edit(type)"></span>
+       </div>
+
+    </div>
+</div>

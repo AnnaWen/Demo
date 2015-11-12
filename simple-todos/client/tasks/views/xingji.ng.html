@@ -1,0 +1,39 @@
+<div class="tasks">
+    <!--Sidebar content-->
+<!--
+    <ng-include src="'client/tasks/views/task-details.ng.html'" ></ng-include>
+-->
+
+    <div ng-include="'client/tasks/views/task-details.ng.html'" style="height: 100%"></div>
+    <div class="findList">
+        <div>
+            <table class="table tablehover datatable">
+                <caption class="captionstyle">{{param}} {{ownType.name}}</caption>
+                <caption> <input-text></input-text></caption>
+                <tbody>
+                <tr ng-repeat="task in tasks | filter:{condition:'no'}|orderBy:'endtime':true" ng-dblclick="edit(task)">
+                    <td colspan="4" >
+                        <show-data></show-data>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div>
+            <span class="conditionstyle" ng-click="show()">Completed tasks</span>
+            <div ng-class="{true:'noshow',false:'show'}[isShow]" style="margin-top: 5px">
+                <table class="table tablehover datatable">
+                    <tbody>
+                    <tr ng-repeat="task in tasks|filter: {condition:'done'}|orderBy:'endtime':true" ng-dblclick="edit(task)">
+                        <td colspan="4">
+                            <show-done-data></show-done-data>
+
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+</div>

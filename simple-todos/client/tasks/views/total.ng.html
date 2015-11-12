@@ -1,0 +1,37 @@
+<div>
+
+    <ng-include src="'client/tasks/views/task-details.ng.html'"></ng-include>
+
+    <div class="findList">
+        <div class="captionstyle">Whole</div>
+        <div input-text style="margin-top: 10px"></div>
+        <div style="margin-top: 10px">
+
+            <span class="conditionstyle" ng-if="shoujianTasks.length">Inbox</span>
+
+            <div style="margin-top: 5px">
+                <table class="table tablehover datatable">
+
+                    <tr ng-repeat="task in tasks|filter: {category: 'outbox',condition:'no'}|orderBy:'endtime':true as shoujianTasks"  ng-dblclick="edit(task)">
+                        <td colspan="4">
+                            <show-data></show-data>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div ng-repeat="type in types">
+            <span class="conditionstyle" ng-show="filteredTasks.length">{{type.name}}</span>
+            <div style="margin-top: 5px">
+                <table class="table tablehover datatable">
+                    <tr ng-repeat="task in tasks|filter: {category: type.name,categoryId: type._id,condition:'no'}|orderBy:'endtime':true as filteredTasks"  ng-dblclick="edit(task)">
+                        <td colspan="4">
+                            <show-data></show-data>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

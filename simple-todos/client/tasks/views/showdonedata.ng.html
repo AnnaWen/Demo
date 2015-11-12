@@ -1,0 +1,7 @@
+<span class="glyphicon glyphicon-trash icon" ng-click="remove()" confirm='{{task._id}}'></span>
+<span class="glyphicon glyphicon-edit icon" ng-click="edit(task)" aria-hidden="true"> </span>
+<span class="onRight datestyle" ng-class="{true:'datestyle',false:'overdatestyle'}[isOver]">{{task.dateclock}}</span>
+<div class="input-group">
+    <span class="glyphicon glyphicon-check" ng-click="finished(task)" style="cursor: pointer;color: #adadad"></span>&nbsp;
+    <span style="text-decoration:line-through;color: #adadad">{{task.name}}</span>
+</div>

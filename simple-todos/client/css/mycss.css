@@ -1,0 +1,329 @@
+.bigLogin{
+    margin-left: 40%;
+    margin-right:55%;
+    margin-top: 6%;
+}
+
+#login{
+    margin-left: 0;
+    margin-top: 20px;
+    border: 1px solid #cccccc;
+    width:300px;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 5px 5px 15px 3px #909090;
+
+}
+
+.loginFooter{
+    width: 300px;
+    margin-top: 20px;
+    margin-left:20px;
+    font-size: 16px;
+    font-family: Arial, serif;
+}
+
+.myFonts{
+    color: #337ab7;
+    font-family: Arial, serif;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 100px;
+
+}
+.captionstyle{
+    height: 50px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: #478F8B;
+    color: #ffffff;
+    padding: 4px;
+}
+
+#register{
+    margin-left: 55%;
+    margin-top: 30%;
+    border-right: 1px solid #cccccc;
+    width:300px;
+    border-radius: 5px;
+    padding: 30px;
+
+}
+
+.myTable{
+    width:300px;
+    margin-top: 30%;
+}
+
+.oldstar{
+    position: absolute;
+    z-index: 4;
+    right:1px;
+    top:10px;
+    margin-right: 8px;
+    font-size: 18px;
+    color: #c0c0c0;
+    cursor: pointer;
+}
+
+.changeStar{
+    position: absolute;
+    z-index: 4;
+    right:1px;
+    top:10px;
+    margin-right: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #CD0000;
+}
+
+.leftFonts{
+    padding-left: 15px;
+    font-size: 16px;
+
+}
+
+.leftFooter{
+    height:100%;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.myContain{
+    height: 100%;
+    width:100%;
+    margin: 5px 5px auto;
+    padding: 0;
+}
+
+.input-down{
+    position: absolute;
+    z-index: 1;
+}
+.icon{
+    float: right;
+    margin-right: 8px;
+    font-size: 13px;
+    color: #c0c0c0;
+    cursor: pointer;
+}
+
+.preIcon{
+    color:#4682B4;
+}
+
+.backIcon{
+    color: #CDC9C9;
+    cursor:pointer;
+}
+
+.book{
+    font-size: 18px;
+    font-family: 'Arial', serif;
+    font-weight: bold;
+}
+
+.ping{
+    padding-top:30px;
+    padding-bottom: 10px;
+}
+
+.onLeft{
+
+    margin-left: 13px;
+}
+
+.moveLeft{
+    float: left;
+}
+
+.onRight{
+    float: right;
+    margin-right: 8px;
+}
+
+.addFoot{
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.taskContent{
+    background-color:#F5F5F5;
+    padding-bottom: 0;
+    margin:0 0 60px 0;
+    overflow:auto;
+
+}
+
+.iconUp{
+    padding-top: 5px;
+}
+
+/*查询任务列表*/
+.findList{
+    margin: 0;
+    overflow-y: hidden;
+    height:100%;
+}
+
+
+#addInfo{
+
+    background-color: #ffffff;
+    width: 300px;
+    margin-bottom:0;
+    border:1px solid #cccccc;
+    float: right;
+}
+
+.view-slide-in{
+    position: absolute;
+    z-index: 1;
+    right: -300px;
+    top: 0;
+    display:none;
+}
+
+.view-slide-out{
+    position: relative;
+    top: -6px;
+    margin-right:0;
+    /*  transform:translate(350);*/
+
+}
+
+.tasks{
+    margin: 0;
+    width:100%;
+    height:100%;
+}
+
+.conditionstyle{
+    width:150px;
+    height:20px;
+    padding: 5px;
+    background-color: #2e6da4;
+    font-size: 5px;
+    font-weight: bold;
+    color: #d9edf7;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+.show{
+    display: block;
+    width:100%;
+}
+
+.noshow{
+    display: none;
+}
+
+.typeedit{
+    margin-right: 24px;
+    float: right;
+    margin-top: -21px;
+}
+
+/*a:link {color:#FF0000;text-decoration:none}
+a:visited {color:#00FF00;text-decoration:none}
+a:hover {color:#FF00FF;text-decoration:none}
+a:active {color:#0000FF;text-decoration:none}*/
+a.Tlink:link{text-decoration:none; color:#000;}
+a.Tlink:visited{text-decoration:none; color:#000;}
+a.Tlink:hover{text-decoration:none;color:#000; }
+a.Tlink:active{
+    text-decoration:none;
+    color:#F00;
+    font-weight: bold;
+    font-size: 12px;
+    padding-left: 5px;
+}
+.datestyle{
+    font-size: 10px;
+    color: #4876FF;
+    margin-top: 3px;
+}
+.overdatestyle{
+    font-size: 10px;
+    color: #FF0000;
+    margin-top: 3px;
+}
+
+.modal-body{
+    height:100px;
+}
+
+.leftS{
+ display: block;
+}
+.leftH{
+ display: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    padding:0;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+
+}
+#aa {
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+#left{
+    width: 20%;
+    height: 100%;
+    position: absolute;
+}
+#content{
+    width: 80%;
+    height: 100%;
+    overflow-y: auto;
+    float: right;
+    background-color: #81BCB8;
+}
+#search{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    background-color: #407E7B;
+}
+#type{
+    width: 100%;
+    height: calc(100% - 80px);
+    overflow:auto;
+    background-color: #F7F7F7;
+}
+
+#create{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    background-color: #F7F7F7;
+}
+
+.tablehover tbody tr:hover{
+    background-color: #E1F1FE;
+}
+
+table.datatable tr{
+    background-color: #FFFFFF;
+
+}
+
+.datatable{
+    width:100%;
+
+}

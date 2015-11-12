@@ -1,0 +1,117 @@
+
+<div ng-controller="TaskDetailsCtrl">
+    <div id="addInfo" ng-class="{'true':'view-slide-in','false':'view-slide-out'}[isChange]">
+        <div class="checkbox" >
+            <label class="onLeft" ng-click="finished(task)">
+                <input type="checkbox"/>
+                <span class="book" >{{task.name}}</span>
+            </label>
+            <span class="glyphicon glyphicon-star-empty star" id="star" ng-click="showStar()" ng-class="{true:'oldstar',false:'changeStar'}[isStar]" ng-model="task.isstar" ></span>
+        </div>
+
+        <div class="taskContent">
+            <div class="form-group">
+                <div class="startDate">
+                    <div class="input-group">
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar preIcon" ></span>
+                        </span>
+                        <input type="text" class="form-control" datepicker-popup="{{format}}" ng-model="task.endtime" ng-click="open($event)" is-open="opened"  placeholder="set time" min-date="minDate" max-date="'2024-12-30'" datepicker-options="dateOptions" ng-required="true" close-text="Close">
+                        <span class="input-group-addon backIcon" ng-click="clear()">
+                           <span class="glyphicon glyphicon-remove"></span>
+                        </span>
+<!--
+                        <input data-format="yyyy-MM-dd" class="add-on form-control" name="endtime" type="text" placeholder="设置日期"  ng-model="task.endtime"/>
+                        <span class="input-group-addon backIcon" id="errOne"><span class="glyphicon glyphicon-remove"></span></span>
+-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-time preIcon"></span></span>
+                    <input type="text" name="endclock"  class="form-control" placeholder="remind me" ng-click="showTimePicker()" value="{{task.endclock | date: 'HH:mm'}}" />
+                    <span class="input-group-addon backIcon" ng-click="clearTime()"><span class="glyphicon glyphicon-remove form-control-feedback" aria-hidden="false" ></span></span>
+                </div>
+                <div ng-show="isShow" style="padding-left: 90px">
+                    <timepicker  ng-model="task.endclock" ng-change="changed()" mousewheel="true" hour-step="1" minute-step="1" show-meridian="false"></timepicker>
+                </div>
+
+            </div>
+
+           <!-- <div class="form-group has-feedback">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-plus preIcon"></span></span>
+                    <input type="text" name="taskChild" class="form-control" placeholder="add subtask"
+                           ng-model="task.taskChild"/>
+                    <span class="input-group-addon backIcon">
+                        <span class="glyphicon glyphicon-remove" aria-hidden="false" ng-click="removeChild()"></span>
+                    </span>
+                </div>
+            </div>-->
+            <div class="form-group has-feedback">
+                <div class="input-group">
+                    <span class="input-group-addon iconUp"><span
+                            class="glyphicon glyphicon-pencil preIcon"></span></span>
+                    <textarea rows="10" cols="36" class="form-control" placeholder="Add a note..." name="note" ng-model="task.note"></textarea>
+                </div>
+
+            </div>
+           <!-- <div class="form-group has-feedback">
+                <div class="input-group">
+                    <span class="input-group-addon"><span class="glyphicon glyphicon-file preIcon"></span></span>
+                    <input type="file" name="myFile" id="myFile" class="form-control" placeholder="add a file" ng-model="task.myFile" multiple/>
+                    <button ng-click="btn_upload()">Upload</button>
+                    <span class="input-group-addon" id="errFile">
+                        <span class="glyphicon glyphicon-remove backIcon" aria-hidden="false"></span>
+
+                    </span>
+
+                </div>
+                <div ng-repeat="file in files" style="margin-top: 10px;border-bottom-color: antiquewhite;border-bottom-style: double;">
+                    <div><span>{{file.name}}</span>
+                        <div style="float:right;"><span>{{file.humanSize}}</span>
+                        <a ng-click="btn_remove(file)" title="Remove from list to be uploaded">
+                        <span class="glyphicon glyphicon-remove"></span></a></div>
+                    </div>
+                    <progress style="width:400px;" value="{{file.loaded}}" max="{{file.size}}"></progress>
+                </div>
+
+            </div>-->
+          <!--  <div class="ping">
+                <input class="form-control" name="discuss" placeholder="添加评论..." ng-model="task.condition" />
+            </div>-->
+        </div>
+        <div class="alert alert-info" role="alert" ng-hide="saveFlag">
+            <strong>Save success!</strong>
+        </div>
+        <div class="addFoot">
+            <span class="add-on glyphicon glyphicon-hand-right" style="color:#8B8682;cursor: pointer;" ng-click="close()"></span>
+            <span style="padding-left: 20px"> create At {{task.createAt |date:'EEE d/MMM/yyyy'}}</span>
+            <span class="onRight" style="color:#8B8682;cursor: pointer;font-weight: bold" ng-click="save(task)">
+                保存
+            </span>
+            <!--<span class="add-on glyphicon glyphicon-trash onRight" style="color:#8B8682;cursor: pointer;"></span>-->
+        </div>
+    </div>
+</div>
+<!--
+
+<script type="text/javascript">
+    $(function () {
+        $('.startDate').datetimepicker({
+            pickTime: false
+        });
+    });
+
+    $(function () {
+        $('#datetimepicker2').datetimepicker({
+            language: 'en',
+            pick12HourFormat: true
+        });
+    });
+
+
+</script>-->

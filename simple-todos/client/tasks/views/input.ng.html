@@ -1,0 +1,10 @@
+<form>
+    <div class="input-group quan" style="width: 100%;height: 100%">
+        <span class="input-group-addon">
+            <span class="glyphicon glyphicon-plus preIcon"></span>
+        </span>
+        <input type="text" class="form-control input-down" id="name" name="name" placeholder="{{inputText}}" autofocus ng-model="task.name">
+        <span class="glyphicon glyphicon-star-empty star" ng-click="showStar()" ng-class="{true:'oldstar',false:'changeStar'}[isStar]" ng-model="task.isstar" ></span>
+        <button ng-click="addTask(task,ownType);task='';" class="hidden">add</button>
+    </div>
+</form>

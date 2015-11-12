@@ -1,0 +1,36 @@
+<!--Sidebar content-->
+    <div>
+
+        <div class="form-group pointer">
+            <span class="glyphicon glyphicon-inbox" style="color: #4682B4;font-size: 18px;"></span>
+               <a ui-sref="inbox.tasks({param:'outbox'})"  class="Tlink"> <span class="leftFonts">Inbox</span></a>
+
+        </div>
+        <div class="form-group pointer">
+            <span class="glyphicon glyphicon-star-empty" style="color: #FF4040;font-size: 18px;"> </span>
+            <a ui-sref="inbox.findstartypes({param:'star'})"  class="Tlink"> <span class="leftFonts">Starred</span></a>
+        </div>
+        <!--<div class="form-group pointer">
+            <span class="glyphicon glyphicon-cog" style="color: #3CB371;font-size: 18px;"> </span>
+            <span class="leftFonts">今天</span>
+        </div>
+        <div class="form-group pointer">
+            <span class="glyphicon glyphicon-calendar" style="color: #FFA500;font-size: 18px;"></span>
+            <span class="leftFonts">本周</span>
+        </div>-->
+        <div class="form-group pointer">
+            <span class="glyphicon glyphicon-list-alt" style="color: #DEB887;font-size: 18px;"></span>
+            <a ui-sref="inbox.totaltasks({param:'whole'})"  class="Tlink"><span class="leftFonts">Whole</span></a>
+        </div>
+        <div class="form-group pointer">
+            <span class="glyphicon glyphicon-ok-circle" style="color:#CDC9C9;font-size: 18px;"></span>
+            <a ui-sref="inbox.finddonetasks" class="Tlink"><span class="leftFonts" >Done</span></a>
+<!--
+            <a ui-sref="inbox.finddonetasks" ><span class="leftFonts" ng-click="changeLink()" ng-class="{'true':'oldA','false':'newA'}[isClick]">Done</span></a>
+-->
+        </div>
+
+        <div ui-view="left"></div>
+
+    </div>
+
